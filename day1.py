@@ -17,13 +17,16 @@ def part2(array):
     count = 0
     old_sum = 0
     for i, e in enumerate(array):
-        new_sum = e + array[i+1] + array[i+2]
-        if i == 0:
+        try:
+            new_sum = e + array[i+1] + array[i+2]
+            if i == 0:
+                old_sum = new_sum
+                continue
+            if new_sum > old_sum:
+                count += 1
             old_sum = new_sum
+        except IndexError:
             continue
-        if new_sum > old_sum:
-            count += 1
-        old_sum = new_sum
     return count
 
 
