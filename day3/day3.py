@@ -7,7 +7,7 @@ def create_array():
 def part1(array):
     gamma = ""
     epsilon = ""
-    counts = {i: 0 for i in range(12)}
+    counts = {i: 0 for i in range(12)}  # counts of 1
     half = len(array)/2
 
     for e in array:
@@ -27,28 +27,22 @@ def part1(array):
 
 
 def part2(array):
+    half = len(array)/2
+
     oxy_array = array
 
-    for pos in range(12):
-        count_0 = 0
-        count_1 = 0
-
-        for _ in range(2):
-            for i, e in enumerate(oxy_array):
-
-                if _ == 0:
-                    if e[pos] == 1:
-                        count_1 += 1
-                    else:
-                        count_0 += 1
-
-                if _ == 1:
-                    x = 1 if count_1 >= count_0 else 0
+    for e in oxy_array:
+        count = 0  # counts of 1
+        for i in range(12):
+            if e[i] == "1":
+                count += 1
 
 
 
+
+    print(oxy_array)
 
 
 
 if __name__ == '__main__':
-    print(part1(create_array()))
+    print(part2(create_array()))
