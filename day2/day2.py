@@ -1,5 +1,5 @@
 def create_array():
-    with open("day2.txt", "r") as f:
+    with open("input.txt", "r") as f:
         x = f.readlines()
         array = [v.strip() for v in x]
     return array
